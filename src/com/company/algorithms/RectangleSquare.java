@@ -16,10 +16,10 @@ W - [10, 20]
 Відповідь - 300.
  */
 public class RectangleSquare {
-    public final static String ARRAYS_LENGTH_INEQUALITY_PATTERN =
+    private final static String ARRAYS_LENGTH_INEQUALITY_PATTERN =
             "Source data arrays lengths are unequal: x.length = %d, h.length = %d, w.length = %d";
 
-    public int max(int[] source) {
+    private int max(int[] source) {
         int result = Integer.MIN_VALUE;
 
         for (int item: source) {
@@ -31,7 +31,7 @@ public class RectangleSquare {
         return result;
     }
 
-    public int min(int[] source) {
+    private int min(int[] source) {
         int result = Integer.MAX_VALUE;
 
         for (int item: source) {

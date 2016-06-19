@@ -12,11 +12,11 @@ package com.company.algorithms;
 import java.util.ArrayDeque;
 
 public class ReversePolishNotation {
-    public static final char DELIMITER_SYMBOL = ' ';
-    public static final char ADD_OPERATION_SIGN = '+';
-    public static final char SUB_OPERATION_SIGN = '-';
-    public static final char MUL_OPERATION_SIGN = '*';
-    public static final char DIV_OPERATION_SIGN = '/';
+    private static final char DELIMITER_SYMBOL = ' ';
+    private static final char ADD_OPERATION_SIGN = '+';
+    private static final char SUB_OPERATION_SIGN = '-';
+    private static final char MUL_OPERATION_SIGN = '*';
+    private static final char DIV_OPERATION_SIGN = '/';
 
     public int evaluate(String expression) {
         String validOperation =

@@ -12,18 +12,18 @@ package com.company.algorithms;
 import java.util.Arrays;
 
 public class ColorChain {
-    public static final String SOME_ALGORITHM_MISTAKE_MESSAGE =
+    private static final String SOME_ALGORITHM_MISTAKE_MESSAGE =
             "There should be some logical mistake in the permutation calculation algorithm implementation!";
 
-    public static final int WHITE_SECTION_LENGTH = 1;
-    public static final int YELLOW_SECTION_LENGTH = 2;
-    public static final int RED_SECTION_LENGTH = 3;
-    public static final int[] sections = {WHITE_SECTION_LENGTH, YELLOW_SECTION_LENGTH, RED_SECTION_LENGTH};
+    private static final int WHITE_SECTION_LENGTH = 1;
+    private static final int YELLOW_SECTION_LENGTH = 2;
+    private static final int RED_SECTION_LENGTH = 3;
+    private static final int[] sections = {WHITE_SECTION_LENGTH, YELLOW_SECTION_LENGTH, RED_SECTION_LENGTH};
 
     private int variantCount;
     private int[] sectionCounter = new int[sections.length];
 
-    public static int sum(int[] data) {
+    private static int sum(int[] data) {
         int result = 0;
         for (int number: data) {
             result += number;
@@ -32,7 +32,7 @@ public class ColorChain {
         return result;
     }
 
-    public static long mul(int[] data) {
+    private static long mul(int[] data) {
         long result = 1;
         for (int number: data) {
             result *= number;
@@ -41,7 +41,7 @@ public class ColorChain {
         return result;
     }
 
-    public static int GreatestCommonDivisor(int a, int b) {
+    private static int GreatestCommonDivisor(int a, int b) {
         int minNumber = (a < b) ? a : b;
         int maxNumber = (a > b) ? a : b;
 
@@ -51,12 +51,12 @@ public class ColorChain {
         return GreatestCommonDivisor(minNumber, x);
     }
 
-    public static int[] deleteNumberFromArray(int[] data, int number) {
+    private static int[] deleteNumberFromArray(int[] data, int number) {
         int notNullDataLength = 0;
         int [] notNullData = new int[data.length];
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] != number) {
-                notNullData[notNullDataLength++] = data[i];
+        for (int aData : data) {
+            if (aData != number) {
+                notNullData[notNullDataLength++] = aData;
             }
         }
 
@@ -64,16 +64,16 @@ public class ColorChain {
     }
 
 
-    public static int[] deleteZeroFromArray(int[] data) {
+    private static int[] deleteZeroFromArray(int[] data) {
         return deleteNumberFromArray(data, 0);
     }
 
-    public static int[] deleteOneFromArray(int[] data) {
+    private static int[] deleteOneFromArray(int[] data) {
         return deleteNumberFromArray(data, 1);
     }
 
 
-    public static int permutationCount(int[] inputElements) throws Exception {
+    private static int permutationCount(int[] inputElements) throws Exception {
         // The classical formula is
         // (sum(repetitionElements)! / (repetitionElements[0]! * repetitionElement[1]! * ...)
         // But because of the huge values of factorials itself, let's try to optimize this algorithm
@@ -157,7 +157,7 @@ public class ColorChain {
         // Some sort of protection
         if (thisSectionIndex < sections.length) {
             int thisPiece = sections[thisSectionIndex];
-            int maxCount = (int)(number / thisPiece);
+            int maxCount = number / thisPiece;
             int nextSectionIndex = thisSectionIndex + 1;
             int numberRemainder = number;
             // Clear "current" section counter

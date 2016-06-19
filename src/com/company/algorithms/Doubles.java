@@ -13,12 +13,12 @@ package com.company.algorithms;
  */
 
 public class Doubles {
-    public static class StateMachine {
-        public static final char PLUS_SIGN_CHARACTER = '+';
-        public static final char MINUS_SIGN_CHARACTER = '-';
-        public static final char SCIENTIFIC_NOTATION_LOWER_CASE_CHARACTER = 'e';
-        public static final char SCIENTIFIC_NOTATION_UPPER_CASE_CHARACTER = 'E';
-        public static final char DECIMAL_POINT_CHARACTER = '.';
+    private static class StateMachine {
+        static final char PLUS_SIGN_CHARACTER = '+';
+        static final char MINUS_SIGN_CHARACTER = '-';
+        static final char SCIENTIFIC_NOTATION_LOWER_CASE_CHARACTER = 'e';
+        static final char SCIENTIFIC_NOTATION_UPPER_CASE_CHARACTER = 'E';
+        static final char DECIMAL_POINT_CHARACTER = '.';
 
         private State state;
         private static Double result;
@@ -30,11 +30,11 @@ public class Doubles {
         private static boolean scientificNotationIsFound = false;
         private static boolean anyDigitIsFound = true;
 
-        public StateMachine() {
+        StateMachine() {
             startNewParsing();
         }
 
-        public void startNewParsing() {
+        void startNewParsing() {
             result = 0.0;
             signFactor = 1;
             powerFactor = 0;
@@ -197,13 +197,13 @@ public class Doubles {
                                                         SCIENTIFIC_NOTATION :
                                                         INVALID_FINAL;
             }
-        };
+        }
 
         private static void enhanceFractionFactor() {
             fractionFactor *= 0.1;
         }
 
-        public void next(char character) {
+        void next(char character) {
             state = state.next(character);
         }
 

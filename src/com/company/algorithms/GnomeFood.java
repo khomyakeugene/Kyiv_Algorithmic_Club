@@ -19,7 +19,7 @@ package com.company.algorithms;
 import java.util.Arrays;
 
 public class GnomeFood {
-    public final static String ARRAYS_LENGTH_INEQUALITY_PATTERN =
+    private final static String ARRAYS_LENGTH_INEQUALITY_PATTERN =
             "Source data arrays lengths are unequal: gnames.length = %d, portions.length = %d";
 
     public int[] find(int[] gnames, int[] portions) {
@@ -35,7 +35,7 @@ public class GnomeFood {
         int[] result = new int[gnames.length];
         int maxGNamesIndex;
         int bigPortionIndex;
-        for (int i = 0; i < gnames.length; i++) {
+        for (int gname : gnames) {
             // Search max from "unprocessed" data
             maxGNamesIndex = 0;
             bigPortionIndex = 0;

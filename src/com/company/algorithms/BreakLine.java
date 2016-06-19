@@ -12,9 +12,9 @@ package com.company.algorithms;
 import java.util.Arrays;
 
 public class BreakLine {
-    public static final char END_OF_LINE = '\n';
+    private static final char END_OF_LINE = '\n';
 
-    protected static boolean isWordCharacter(char character) {
+    private static boolean isWordCharacter(char character) {
         return Character.isLetter(character);
     }
 

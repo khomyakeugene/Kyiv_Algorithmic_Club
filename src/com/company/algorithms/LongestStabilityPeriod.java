@@ -10,7 +10,7 @@ package com.company.algorithms;
 Повернути кількість місяців.
  */
 public  class LongestStabilityPeriod {
-    public final static int STABILITY_PERIOD_DIFFERENCE_CRITERION = 1;
+    private final static int STABILITY_PERIOD_DIFFERENCE_CRITERION = 1;
 
     public int count(int[] gdp) {
         int result = 0;
@@ -19,7 +19,7 @@ public  class LongestStabilityPeriod {
             int monthGDP;
             int minMonthGDP = gdp[0];
             int maxMonthGDP = gdp[0];
-            int newBoundaryValueType = 0;
+            int newBoundaryValueType;
             result = 1;
             for (int i = 1; i < gdp.length; i++) {
                 monthGDP = gdp[i];

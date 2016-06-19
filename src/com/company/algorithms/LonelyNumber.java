@@ -9,10 +9,10 @@ package com.company.algorithms;
 Складність рішення по часу повинна бути O(N).
  */
 public class LonelyNumber {
-    public static final String INVALID_REPEAT_COUNT_PATTERN = "Error: some number(s) repeat(s) not 1 but not %d times!";
-    public static final int DEFAULT_REPEAT_COUNT = 5;
+    private static final String INVALID_REPEAT_COUNT_PATTERN = "Error: some number(s) repeat(s) not 1 but not %d times!";
+    private static final int DEFAULT_REPEAT_COUNT = 5;
 
-    public int find(int[] input, int repeatCount) throws IllegalArgumentException {
+    private int find(int[] input, int repeatCount) throws IllegalArgumentException {
         int bits[]= new int[Integer.SIZE];
 
         int mask = 1;

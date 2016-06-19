@@ -14,12 +14,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CSVParser {
-    public static final char END_OF_LINE = '\n';
-    public static final char COLUMN_DELIMITER = ',';
-    public static final char QUOTATION_MARK = '"';
+    private static final char END_OF_LINE = '\n';
+    private static final char COLUMN_DELIMITER = ',';
+    private static final char QUOTATION_MARK = '"';
 
     private class StringParser {
-        public List<String> parse(String input, char delimiterCharacter, boolean retainQuotationMark) {
+        List<String> parse(String input, char delimiterCharacter, boolean retainQuotationMark) {
             ArrayList<String> result = new ArrayList<>();
 
             int fieldLength = 0;
