@@ -12,15 +12,10 @@ public interface Node<T> {
 
     void setValue(T value);
 
-    public static <E> Node<E> revert(Node<E> node) {
-        Node<E> second = node.getNext();
-        Node<E> third = second.getNext();
-
+    static <E> Node<E> revert(Node<E> node) {
+        Node<E> previous = node;
+        Node<E> current = node.getNext();
         node.setNext(null);
-        second.setNext(node);
-
-        Node<E> current = third;
-        Node<E> previous = second;
 
         while (current != null) {
             Node<E> next = current.getNext();
