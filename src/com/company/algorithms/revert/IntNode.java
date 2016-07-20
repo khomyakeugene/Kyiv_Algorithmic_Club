@@ -13,8 +13,8 @@ public class IntNode implements Node<Integer> {
     }
 
     @Override
-    public IntNode getNext() {
-        return null;
+    public Node<Integer> getNext() {
+        return next;
     }
 
     @Override
